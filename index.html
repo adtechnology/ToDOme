@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<input type="checkbox" class="sr-only" id="darkmode-toggle">
+<label for="darkmode-toggle" class="toggle">
+    <span>Toggle dark mode</span>
+</label>
+<div class="container">
+    <h1>To-Do List</h1>
+    <form id="todo-form">
+        <label for="todo-input">New Task</label>
+        <input type="text" id="todo-input" placeholder="Add new task" required>
+
+        <label for="todo-date">Due Date</label>
+        <input type="date" id="todo-date" required>
+
+        <label for="todo-category">Category</label>
+        <select id="todo-category" required>
+            <option value="Work">Work</option>
+            <option value="Family">Family</option>
+            <option value="Sports">Sports</option>
+            <option value="Study">Study</option>
+        </select>
+        <button type="submit">Add</button>
+    </form>
+    <ul id="todo-list"></ul>
+</div>
+
+<!-- Modal -->
+<div id="todo-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Edit Task</h2>
+        <div>
+            <label for="modal-description">Description:</label>
+            <textarea id="modal-description"></textarea>
+        </div>
+        <div>
+            <label for="subtask-input">Subtasks:</label>
+            <form id="subtask-form">
+                <input type="text" id="subtask-input" placeholder="Add new subtask">
+                <button type="submit">Add</button>
+            </form>
+            <ul id="subtask-list"></ul>
+        </div>
+        <button id="save-btn">Save</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
